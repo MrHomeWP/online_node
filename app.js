@@ -8,6 +8,15 @@ app.use(cors());
 app.use("",express.static("./01backSystem"));//访问方式  http://127.0.0.1:3081
 app.use("/newsUniapp",express.static("./02newsUniapp"));//访问方式  http://127.0.0.1:3081/newsUniapp
 
+//测试get接口
+const router = express.Router()
+app.get("/get",(req,res)=>{
+  res.send({
+    status:"200",
+    msg:"get测试接口请求成功",
+  })
+})
+
 //设置正确的 MIME 类型
 app.get("/assets/index-b4f31f88.css", (req, res) => {
   res.setHeader("Content-Type", "text/css");
